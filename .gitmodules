@@ -1,0 +1,3 @@
+[submodule "sqlai-core"]
+	path = submodules/sqlai-core
+	url = https://github.com/nguyenduyminhthong/sqlai-core
