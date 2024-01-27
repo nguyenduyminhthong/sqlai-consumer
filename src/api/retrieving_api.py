@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 class RetrievingQueryRequest(BaseModel):
-    host: str
+    vector_db_host: str
     key: str
     question: str
 
@@ -24,7 +24,7 @@ def get_results(request: RetrievingQueryRequest) -> RetrievingQueryResponse:
     logger.info(f"Retrieving query with request: {request}")
 
     try:
-        db_agent = ChromaDBAgent(request.host)
+        db_agent = ChromaDBAgent(request.vector_db_host)
         related_questions = db_agent.get_related_questions(request.question)
         related_ddls = db_agent.get_related_ddls(request.question)
         related_docs = db_agent.get_related_docs(request.question)

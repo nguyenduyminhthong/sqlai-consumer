@@ -9,7 +9,7 @@ router = APIRouter()
 
 
 class TrainingModelRequest(BaseModel):
-    host: str
+    vector_db_host: str
     sql: str | None = None
     question: str | None = None
     ddl: str | None = None
@@ -21,7 +21,7 @@ def train_model(request: TrainingModelRequest) -> Response:
     logger.info(f"Training model with request: {request}")
 
     try:
-        db_agent = ChromaDBAgent(request.host)
+        db_agent = ChromaDBAgent(request.vector_db_host)
         if request.doc:
             logger.info(f"Adding doc: {request.doc}")
             db_agent.add_doc(request.doc)
