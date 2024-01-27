@@ -11,7 +11,7 @@ router = APIRouter()
 
 class RetrievingQueryRequest(BaseModel):
     vector_db_host: str
-    key: str
+    llm_api_key: str
     question: str
 
 
@@ -29,7 +29,7 @@ def get_results(request: RetrievingQueryRequest) -> RetrievingQueryResponse:
         related_ddls = db_agent.get_related_ddls(request.question)
         related_docs = db_agent.get_related_docs(request.question)
 
-        cohere_agent = CohereAgent(request.key)
+        cohere_agent = CohereAgent(request.llm_api_key)
         generated_sql = cohere_agent.generate_sql(request.question, related_questions, related_ddls, related_docs)
 
         return RetrievingQueryResponse(sql=generated_sql)
