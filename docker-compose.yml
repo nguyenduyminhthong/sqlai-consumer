@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  sqlai-server:
+  sqlai-consumer:
     build:
       context: .
       dockerfile: Dockerfile
