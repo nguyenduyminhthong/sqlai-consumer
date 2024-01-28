@@ -8,6 +8,8 @@ services:
     container_name: sqlai-consumer
     ports:
       - "8000:8000"
+    volumes:
+      - ~/sqlai-consumer/.cache:/root/.cache
     command: uvicorn src.main:app --host 0.0.0.0
     restart: unless-stopped
     network_mode: bridge
