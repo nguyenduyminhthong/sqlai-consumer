@@ -22,10 +22,6 @@ def train_model(request: TrainingModelRequest) -> Response:
 
     try:
         db_agent = ChromaDBAgent(request.vector_db_host)
-        if request.doc:
-            logger.info(f"Adding doc: {request.doc}")
-            db_agent.add_doc(request.doc)
-
         if request.sql:
             logger.info(f"Adding sql: {request.sql}")
             if not request.question:
@@ -33,6 +29,10 @@ def train_model(request: TrainingModelRequest) -> Response:
 
             logger.info(f"Adding question: {request.question}")
             db_agent.add_sql_question(request.sql, request.question)
+
+        if request.doc:
+            logger.info(f"Adding doc: {request.doc}")
+            db_agent.add_doc(request.doc)
 
         if request.ddl:
             logger.info(f"Adding ddl: {request.ddl}")
