@@ -17,6 +17,7 @@ class TrainingModelRequest(BaseModel):
     doc: str | None = None
     time_created: str = get_formatted_time()
 
+
 @router.post("/train_model")
 def train_model(request: TrainingModelRequest) -> Response:
     logger.info(f"Training model with request: {request}")
