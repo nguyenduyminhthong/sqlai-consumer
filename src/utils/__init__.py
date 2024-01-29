@@ -1,4 +1,4 @@
-from datatime import datetime
+from datetime import datetime
 
 
 def get_formatted_time():
