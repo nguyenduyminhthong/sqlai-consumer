@@ -4,5 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install ./submodules/sqlai-core
+RUN pip install ./submodules/sqlai-core
