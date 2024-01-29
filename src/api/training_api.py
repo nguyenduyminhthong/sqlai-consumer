@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 from database import ChromaDBAgent
 
-from utils import get_formatted_time
+from ..utils import get_formatted_time
 
 
 router = APIRouter()
