@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Response, status
 from loguru import logger
 from pydantic import BaseModel
-from database import ChromaDBAgent
-from utils import get_formatted_time
+from sqlai.database import ChromaDBAgent
+from sqlai.utils import get_formatted_time
 
 
 router = APIRouter()

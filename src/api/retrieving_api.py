@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from loguru import logger
 from pydantic import BaseModel
-from database import ChromaDBAgent
-from model import CohereAgent
+from sqlai.database import ChromaDBAgent
+from sqlai.model import CohereAgent
 
 
 router = APIRouter()
