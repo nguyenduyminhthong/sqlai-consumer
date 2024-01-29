@@ -1,1 +1,1 @@
-sqlai @ git+https://github.com/nguyenduyminhthong/sqlai-core
+sqlai @ git+https://github.com/nguyenduyminhthong/sqlai-core@main
